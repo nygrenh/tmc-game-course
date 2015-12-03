@@ -9,7 +9,6 @@ var scoreText;
 function create() {
 
     player = game.add.sprite(100, 587, 'player');
-    player.scale.set(0.1, 0.1);
 
     game.physics.arcade.enable(player);
 
