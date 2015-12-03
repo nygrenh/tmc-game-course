@@ -31,35 +31,3 @@ function create() {
     scoreText = game.add.text(16, 16, 'Pisteet: 0', { fontSize: '32px', fill: '#ff0000' });
 
 }
-
-function preload() {
-
-    game.load.baseURL = 'http://examples.phaser.io/assets/';
-
-    game.stage.backgroundColor = '#000';
-
-    game.load.image('player', 'sprites/bunny.png');
-    game.load.image('platform', 'sprites/carrot.png');
-
-}
-
-function update () {
-    game.physics.arcade.collide(player, platforms, (player, platform) => {
-        platform.destroy();
-        score += 1;
-        scoreText.text = 'Pisteet: ' + score;
-    });
-
-    player.body.velocity.x = 0;
-    player.body.velocity.y = 0;
-
-    if (cursors.left.isDown) {
-        player.body.velocity.x = -250;
-    } else if (cursors.right.isDown) {
-        player.body.velocity.x = 250;
-    }
-
-    platforms.setAll('body.velocity.y', 500);
-}
-
-function render () {}
