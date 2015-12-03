@@ -27,7 +27,7 @@ function create() {
 }
 
 function preload() {
-    game.load.baseURL = 'https://ohjelmointikurssi.github.io/cdn/';
+    game.load.baseURL = '//ohjelmointikurssi.github.io/cdn/';
 
     game.stage.backgroundColor = '#000';
 
