@@ -1,4 +1,3 @@
-var game = new Phaser.Game(800, 600, Phaser.AUTO, 'game-area', { preload: preload, create: create, update: update });
 var player;
 var platforms;
 var cursors;
