@@ -45,7 +45,7 @@ function startMoving() {
     tween = game.add.tween(sprite);
     tween.frameBased = true;
     var distance = calculateDistance();
-    tween.to({ x: xDestinations, y: yDestinations }, distance * 3, Phaser.Easing.Linear.None);
+    tween.to({ x: xDestinations, y: yDestinations }, distance * 5, Phaser.Easing.Linear.None);
     tween.onUpdateCallback(trail);
 
     game.add.sprite(0, 0, texture);

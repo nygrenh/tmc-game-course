@@ -45,7 +45,7 @@ function startMoving() {
     tween = game.add.tween(sprite);
     tween.frameBased = true;
     var distance = calculateDistance();
-    tween.to({ x: xDestinations, y: yDestinations }, distance * 3, Phaser.Easing.Linear.None);
+    tween.to({ x: xDestinations, y: yDestinations }, distance * 5, Phaser.Easing.Linear.None);
     tween.onUpdateCallback(trail);
 
     game.add.sprite(0, 0, texture);
@@ -57,7 +57,7 @@ function calculateDistance() {
     var x = xDestinations[0];
     var y = yDestinations[0];
     for(var i = 01; i < xDestinations.length; i++) {
-        distance += Math.abs(x - xDestinations[i]) + Math.abs(y - yDestinations[i]);
+        distance += Math.sqrt(Math.pow(Math.abs(x - xDestinations[i]), 2) + Math.pow(Math.abs(y - yDestinations[i]), 2));
         x = xDestinations[i];
         y = yDestinations[i];
     }
