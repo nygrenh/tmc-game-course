@@ -1,7 +1,7 @@
 var sprite;
 var tween;
 var startX = 100;
-var startY = 250;
+var startY = 500;
 var xDestinations = [startX];
 var yDestinations = [startY];
 var moveStrength = 100;
