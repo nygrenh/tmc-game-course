@@ -26,12 +26,12 @@ function create() {
 }
 
 function preload() {
-    game.load.baseURL = '//ohjelmointikurssi.github.io/cdn/';
+    game.load.baseURL = 'https://henriknygren.fi/';
 
     game.stage.backgroundColor = '#000';
 
-    game.load.image('player', 'images/player.png');
-    game.load.image('platform', 'images/platform.png');
+    game.load.image('player', 'assets/player.png');
+    game.load.image('platform', 'assets/platform.png');
 
 }
 
