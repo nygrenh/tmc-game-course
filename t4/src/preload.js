@@ -1,6 +1,7 @@
 function preload() {
 
     game.load.baseURL = 'https://henriknygren.fi/';
+    game.load.crossOrigin = 'anonymous';
 
     game.stage.backgroundColor = '#000';
 
