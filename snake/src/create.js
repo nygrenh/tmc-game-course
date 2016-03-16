@@ -1,7 +1,7 @@
 var mato;
 var omena;
 var suunta;
-var kasva;
+var koko;
 var pisteet;
 var pisteetTekstinä;
 
@@ -12,7 +12,7 @@ function create() {
     mato = [];
     omena = {};
     suunta = 'oikealle';
-    kasva = false;
+    koko = 4;
     pisteet = 0;
     ruudunKoko = 20;
 
@@ -29,7 +29,5 @@ function create() {
 }
 
 function luoMato() {
-    for (var i = 0; i < 10; i++) {
-        mato[i] = game.add.sprite(160 - i * ruudunKoko, 160, 'mato');
-    }
+    mato[0] = game.add.sprite(160, 160, 'mato');
 }

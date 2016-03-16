@@ -3,8 +3,8 @@ function update () {
     liiku();
 
     if (törmääOmenaan()) {
-        kasva = true;
-        pisteet++;
+        koko = koko + 1;
+        pisteet = pisteet + 1;
         pisteetTekstinä.text = 'Score: ' + pisteet;
         omena.destroy();
         uusiOmena();

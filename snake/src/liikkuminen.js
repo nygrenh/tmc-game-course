@@ -20,9 +20,7 @@ function liiku() {
 }
 
 function liikutaHäntää() {
-    if (kasva) {
-        kasva = false;
-    } else {
+    if (mato.length > koko) {
         mato.pop().destroy();
     }
 }
