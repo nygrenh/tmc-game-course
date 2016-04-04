@@ -4,3 +4,4 @@ function preload() {
     game.load.image('mato', '/assets/snake.png');
     game.load.image('omena', '/assets/apple.png');
 }
+// LOCK FROM BEGINNING
