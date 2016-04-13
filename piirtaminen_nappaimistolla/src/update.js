@@ -17,23 +17,25 @@ function lueSuunta() {
 }
 
 function liiku(suunta) {
-  var madonPää = mato[0];
+  var edellinenPala = palat[0];
 
   var x;
   var y;
   if (suunta === 'oikealle') {
-    x = madonPää.x + ruudunKoko;
-    y = madonPää.y;
+    x = edellinenPala.x + ruudunKoko;
+    y = edellinenPala.y;
   } else if (suunta === 'vasemmalle') {
-    x = madonPää.x - ruudunKoko;
-    y = madonPää.y;
+    x = edellinenPala.x - ruudunKoko;
+    y = edellinenPala.y;
   } else if (suunta === 'ylös') {
-    x = madonPää.x;
-    y = madonPää.y - ruudunKoko;
+    x = edellinenPala.x;
+    y = edellinenPala.y - ruudunKoko;
   } else if (suunta === 'alas') {
-    x = madonPää.x;
-    y = madonPää.y + ruudunKoko;
+    x = edellinenPala.x;
+    y = edellinenPala.y + ruudunKoko;
   }
-  mato.unshift(game.add.sprite(x, y, 'mato'));
-  siirrotTekstinä.text = 'Siirtoja: ' + (mato.length - 1);
+  var uusiPala = game.add.sprite(x, y, 'pala');
+  uusiPala.scale.setTo(skaala, skaala);
+  palat.unshift(uusiPala);
+  siirrotTekstinä.text = 'Siirtoja: ' + (palat.length - 1);
 }
