@@ -9,10 +9,17 @@ function liiku() {
     } else if (suunta === 'vasemmalle') {
         x = madonPää.x - ruudunKoko;
         y = madonPää.y;
+    } else if (suunta === 'ylös') {
         // LOCK FROM BEGINNING
+        // Korvaa alla oleva rivi koodillasi
+        return;
+        // START LOCK
+    } else if (suunta === 'alas') {
+        // END LOCK
+        // Korvaa alla oleva rivi koodillasi
+        return;
+        // LOCK TO END
     }
-
-    // LOCK TO END
     mato.unshift(game.add.sprite(x, y, 'mato'));
 }
 
