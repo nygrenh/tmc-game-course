@@ -1,10 +1,18 @@
 function törmääItseensä() {
-    var madonPää = mato[0];
-    for (var i = 1; i < mato.length; i++) {
+    var indeksi = 1;
+    while (true) {
+        var madonPää = mato[0];
+        var nykyinenMadonOsa = mato[indeksi];
+        indeksi = indeksi + 1;
         // LOCK FROM BEGINNING
-        if ( false ) {
+        var xKoordinaatitOvatSamat = false;
+        var yKoordinaatitOvatSamat = false;
         // LOCK TO END
-            return true;
+        if ( xKoordinaatitOvatSamat && yKoordinaatitOvatSamat ) {
+            return true
+        }
+        if (indeksi >= mato.length) {
+            break;
         }
     }
     return false;
