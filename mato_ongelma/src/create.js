@@ -12,7 +12,7 @@ function create() {
     mato = [];
     omena = {};
     suunta = 'alas';
-    koko = 4;
+    koko = 5000;
     pisteet = 0;
     ruudunKoko = 20;
 

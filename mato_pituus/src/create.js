@@ -11,10 +11,10 @@ var näppäimet;
 function create() {
     mato = [];
     omena = {};
-    // LOCK FROM BEGINNING
     suunta = 'alas';
-    // START LOCK
+    // LOCK FROM BEGINNING
     koko = 5000;
+    // LOCK TO END
     pisteet = 0;
     ruudunKoko = 20;
 
@@ -31,9 +31,7 @@ function create() {
 }
 
 function luoMato() {
-    // END LOCK
-    luoMadonOsa(35, 25);
-    // LOCK TO END
+    luoMadonOsa(5, 5);
 }
 
 function luoMadonOsa(x, y) {
