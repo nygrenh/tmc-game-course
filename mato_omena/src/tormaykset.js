@@ -17,13 +17,10 @@ function törmääSeinään() {
 }
 
 function törmääOmenaan() {
-    var törmää = false;
-    mato.forEach(function(madonPala) {
-      // LOCK FROM BEGINNING
-        if ( false ) {
-      // LOCK TO END
-            törmää = true;
-        }
-    });
-    return törmää;
+  var madonPää = mato[0];
+  // LOCK FROM BEGINNING
+    var xKoordinaatitOvatSamat = false;
+    var yKoordinaatitOvatSamat = false;
+    // LOCK TO END
+    return xKoordinaatitOvatSamat && yKoordinaatitOvatSamat;
 }
