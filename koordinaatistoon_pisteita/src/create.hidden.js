@@ -17,11 +17,8 @@ function create() {
     game.stage.backgroundColor = '#8EB367';
 
     siirrotTekstinä = game.add.text(30, 20, 'Paloja: 0', { font: 'bold 14px sans-serif', fill: '#36381B', align: 'center' });
-    // LOCK FROM BEGINNING
-    luoPala(5, 5);
-    // Piirrä loppu kuvasta täällä
 
-    // LOCK TO END
+    piirra();
 }
 
 function luoPala(x, y) {
