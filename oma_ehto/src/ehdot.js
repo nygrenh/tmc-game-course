@@ -1,4 +1,4 @@
-if (a < 1) {
+if (false) {
   // LOCK TO END
   console.log("Totta");
 }

@@ -4,6 +4,6 @@ if (a <= 42) {
   console.log("Totta");
 }
 // LOCK FROM BEGINNING
-if () {
+if (false) {
   console.log("Ei totta");
 }
