@@ -1,7 +1,4 @@
-var a = 4;
-
-
-// LOCK TO END
 if (a < 1) {
+  // LOCK TO END
   console.log("Totta");
 }
