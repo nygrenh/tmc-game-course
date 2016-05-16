@@ -1,7 +1,4 @@
 function update () {
-    var pallonNopeus = 250;
-    var palkinNopeus = 500;
-
     game.physics.arcade.collide(player, platforms, (player, platform) => {
         platform.destroy();
         score += 1;
