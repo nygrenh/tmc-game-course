@@ -24,9 +24,7 @@ function create() {
     uusiOmena();
 
     pisteetTekstinä = game.add.text(30, 20, 'Score: 0', { font: 'bold 14px sans-serif', fill: '#36381B', align: 'center' });
-    // LOCK FROM BEGINNING
-    this.game.time.slowMotion = 1;
-    // LOCK TO END
+    setGameSpeed();
 }
 
 function luoMato() {
