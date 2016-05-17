@@ -7,12 +7,10 @@ var skaala;
 var lisattava;
 var edellinenPala;
 
-
 function create() {
     palat = [];
     siirrot = 0;
     lisattava = [];
-
     skaala = ruudunKoko / 20;
 
     game.stage.backgroundColor = '#8EB367';
