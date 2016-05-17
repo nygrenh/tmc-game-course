@@ -1,7 +1,7 @@
 var mato;
 var omena;
 var suunta;
-var koko;
+
 var pisteet;
 var pisteetTekstinä;
 
@@ -12,9 +12,6 @@ function create() {
     mato = [];
     omena = {};
     suunta = 'alas';
-    // LOCK FROM BEGINNING
-    koko = 5000;
-    // LOCK TO END
     pisteet = 0;
     ruudunKoko = 20;
 
