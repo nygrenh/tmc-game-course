@@ -39,9 +39,3 @@ function luoMato() {
 function luoMadonOsa(x, y) {
     mato.push(game.add.sprite(x * ruudunKoko, y * ruudunKoko, 'mato'));
 }
-
-function kerranSekunnissa() {
-    // LOCK FROM BEGINNING
-    // Kirjota koodisi tänne
-    // LOCK TO END
-}
