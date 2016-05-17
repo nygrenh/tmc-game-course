@@ -1,6 +1,5 @@
 var mato;
 var omena;
-var suunta;
 var koko;
 var pisteet;
 var pisteetTekstinä;
@@ -11,9 +10,6 @@ var näppäimet;
 function create() {
     mato = [];
     omena = {};
-    // LOCK FROM BEGINNING
-    suunta = 'alas';
-    // START LOCK
     koko = 5000;
     pisteet = 0;
     ruudunKoko = 20;
@@ -28,12 +24,6 @@ function create() {
     pisteetTekstinä = game.add.text(30, 20, 'Score: 0', { font: 'bold 14px sans-serif', fill: '#36381B', align: 'center' });
 
     this.game.time.slowMotion = 10;
-}
-
-function luoMato() {
-    // END LOCK
-    luoMadonOsa(35, 25);
-    // LOCK TO END
 }
 
 function luoMadonOsa(x, y) {
