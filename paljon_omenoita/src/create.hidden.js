@@ -22,9 +22,7 @@ function create() {
     game.stage.backgroundColor = '#8EB367';
 
     luoMato();
-    // LOCK FROM BEGINNING
-    uusiOmena();
-    // LOCK TO END
+    luoOmenat();
 
     pisteetTekstinä = game.add.text(30, 20, 'Score: 0', { font: 'bold 14px sans-serif', fill: '#36381B', align: 'center' });
 
