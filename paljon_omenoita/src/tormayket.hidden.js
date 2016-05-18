@@ -10,7 +10,7 @@ function törmääItseensä() {
 
 function törmääSeinään() {
     var madonPää = mato[0];
-    if (madonPää.x >= this.game.width || madonPää.x < 0 || madonPää.y >= this.game.height || madonPää.y < 0) {
+    if (madonPää.x >= game.width || madonPää.x < 0 || madonPää.y >= game.height || madonPää.y < 0) {
         return true;
     }
     return false;

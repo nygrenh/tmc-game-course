@@ -21,7 +21,7 @@ function create() {
 
   siirrotTekstinä = game.add.text(30, 20, 'Siirtoja: 0', { font: 'bold 14px sans-serif', fill: '#36381B', align: 'center' });
 
-  this.game.time.slowMotion = 10;
+  game.time.slowMotion = 10;
 }
 
 function luoEnsimmainenPala(x, y) {

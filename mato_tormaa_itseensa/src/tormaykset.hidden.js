@@ -1,7 +1,7 @@
 function törmääSeinään() {
     var madonPää = mato[0];
-    var pelinLeveys = this.game.width;
-    var pelinKorkeus = this.game.height;
+    var pelinLeveys = game.width;
+    var pelinKorkeus = game.height;
 
     var mennytOikealtaYli = madonPää.x >= pelinLeveys;
     var mennytVasemmaltaYli = madonPää.x < 0;
