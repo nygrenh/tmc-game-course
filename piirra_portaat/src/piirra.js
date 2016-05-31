@@ -1,5 +1,5 @@
-animaationHitaus = 500;
-ruudunKoko = 20;
+animaationHitaus = 500
+ruudunKoko = 20
 // START LOCK
 function lueKomennot() {
     // END LOCK

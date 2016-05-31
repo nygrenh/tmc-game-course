@@ -1,20 +1,20 @@
 function liikutaHäntää() {
     if (mato.length > koko) {
-        mato.pop().destroy();
+        mato.pop().destroy()
     }
 }
 
 function lueSuunta() {
     if (näppäimet.right.isDown && suunta !== 'vasemmalle') {
-        suunta = 'oikealle';
+        suunta = 'oikealle'
     }
     if (näppäimet.left.isDown && suunta !== 'oikealle') {
-        suunta = 'vasemmalle';
+        suunta = 'vasemmalle'
     }
     if (näppäimet.up.isDown && suunta !== 'alas') {
-        suunta = 'ylös';
+        suunta = 'ylös'
     }
     if (näppäimet.down.isDown && suunta !== 'ylös') {
-        suunta = 'alas';
+        suunta = 'alas'
     }
 }

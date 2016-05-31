@@ -1,41 +1,41 @@
 function update() {
-  lueSuunta();
+  lueSuunta()
 }
 
 function lueSuunta() {
   if (näppäimet.right.isDown) {
-    liiku('oikealle');
+    liiku('oikealle')
   } if (näppäimet.left.isDown) {
-    liiku('vasemmalle');
+    liiku('vasemmalle')
   }
   if (näppäimet.up.isDown) {
-    liiku('ylös');
+    liiku('ylös')
   }
   if (näppäimet.down.isDown) {
-    liiku('alas');
+    liiku('alas')
   }
 }
 
 function liiku(suunta) {
-  var edellinenPala = palat[0];
+  var edellinenPala = palat[0]
 
-  var x;
-  var y;
+  var x
+  var y
   if (suunta === 'oikealle') {
-    x = edellinenPala.x + ruudunKoko;
-    y = edellinenPala.y;
+    x = edellinenPala.x + ruudunKoko
+    y = edellinenPala.y
   } else if (suunta === 'vasemmalle') {
-    x = edellinenPala.x - ruudunKoko;
-    y = edellinenPala.y;
+    x = edellinenPala.x - ruudunKoko
+    y = edellinenPala.y
   } else if (suunta === 'ylös') {
-    x = edellinenPala.x;
-    y = edellinenPala.y - ruudunKoko;
+    x = edellinenPala.x
+    y = edellinenPala.y - ruudunKoko
   } else if (suunta === 'alas') {
-    x = edellinenPala.x;
-    y = edellinenPala.y + ruudunKoko;
+    x = edellinenPala.x
+    y = edellinenPala.y + ruudunKoko
   }
-  var uusiPala = game.add.sprite(x, y, 'pala');
-  uusiPala.scale.setTo(skaala, skaala);
-  palat.unshift(uusiPala);
-  siirrotTekstinä.text = 'Siirtoja: ' + (palat.length - 1);
+  var uusiPala = game.add.sprite(x, y, 'pala')
+  uusiPala.scale.setTo(skaala, skaala)
+  palat.unshift(uusiPala)
+  siirrotTekstinä.text = 'Siirtoja: ' + (palat.length - 1)
 }

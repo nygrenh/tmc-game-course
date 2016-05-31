@@ -1,36 +1,36 @@
-var mato;
-var omena;
-var suunta;
+var mato
+var omena
+var suunta
 
-var pisteet;
-var pisteetTekstinä;
+var pisteet
+var pisteetTekstinä
 
-var ruudunKoko;
-var näppäimet;
+var ruudunKoko
+var näppäimet
 
 function create() {
-    mato = [];
-    omena = {};
-    suunta = 'alas';
-    pisteet = 0;
-    ruudunKoko = 20;
+    mato = []
+    omena = {}
+    suunta = 'alas'
+    pisteet = 0
+    ruudunKoko = 20
 
-    näppäimet = game.input.keyboard.createCursorKeys();
+    näppäimet = game.input.keyboard.createCursorKeys()
 
-    game.stage.backgroundColor = '#8EB367';
+    game.stage.backgroundColor = '#8EB367'
 
-    luoMato();
-    uusiOmena();
+    luoMato()
+    uusiOmena()
 
-    pisteetTekstinä = game.add.text(30, 20, 'Score: 0', { font: 'bold 14px sans-serif', fill: '#36381B', align: 'center' });
+    pisteetTekstinä = game.add.text(30, 20, 'Score: 0', { font: 'bold 14px sans-serif', fill: '#36381B', align: 'center' })
 
-    game.time.slowMotion = 10;
+    game.time.slowMotion = 10
 }
 
 function luoMato() {
-    luoMadonOsa(5, 5);
+    luoMadonOsa(5, 5)
 }
 
 function luoMadonOsa(x, y) {
-    mato.push(game.add.sprite(x * ruudunKoko, y * ruudunKoko, 'mato'));
+    mato.push(game.add.sprite(x * ruudunKoko, y * ruudunKoko, 'mato'))
 }

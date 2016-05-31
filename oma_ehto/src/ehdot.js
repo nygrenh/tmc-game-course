@@ -1,4 +1,4 @@
 if (false) {
   // LOCK TO END
-  console.log("Totta");
+  console.log("Totta")
 }

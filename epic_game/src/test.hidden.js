@@ -1,1 +1,1 @@
-console.log("Hidden test");
+console.log("Hidden test")

@@ -1,15 +1,15 @@
 function update () {
 
     game.physics.arcade.collide(player, platforms, (player, platform) => {
-        platform.destroy();
-        score += 1;
-        scoreText.text = 'Pisteet: ' + score;
-    });
+        platform.destroy()
+        score += 1
+        scoreText.text = 'Pisteet: ' + score
+    })
 
-    player.body.velocity.x = 0;
-    player.body.velocity.y = 0;
+    player.body.velocity.x = 0
+    player.body.velocity.y = 0
 
-    muutaSuuntaa();
+    muutaSuuntaa()
 
-    platforms.setAll('body.velocity.y', palkinNopeus);
+    platforms.setAll('body.velocity.y', palkinNopeus)
 }

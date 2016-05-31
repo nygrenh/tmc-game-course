@@ -1,4 +1,4 @@
 function piirra() {
-    luoPala(5, 5);
+    luoPala(5, 5)
     // Piirrä loppu kuvasta täällä
 }

@@ -1,7 +1,7 @@
-var a = 4;
+var a = 4
 
 
 // LOCK TO END
 if (a < 1) {
-  console.log("Totta");
+  console.log("Totta")
 }

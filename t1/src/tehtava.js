@@ -1,2 +1,2 @@
-var pallonNopeus = 250;
-var palkinNopeus = 500;
+var pallonNopeus = 250
+var palkinNopeus = 500

@@ -1,42 +1,42 @@
 function liiku() {
-    var madonPää = mato[0];
+    var madonPää = mato[0]
 
-    var x;
-    var y;
+    var x
+    var y
     if (suunta === 'oikealle') {
-        x = madonPää.x + ruudunKoko;
-        y = madonPää.y;
+        x = madonPää.x + ruudunKoko
+        y = madonPää.y
     } else if (suunta === 'vasemmalle') {
-        x = madonPää.x - ruudunKoko;
-        y = madonPää.y;
+        x = madonPää.x - ruudunKoko
+        y = madonPää.y
     } else if (suunta === 'ylös') {
-        x = madonPää.x;
-        y = madonPää.y - ruudunKoko;
+        x = madonPää.x
+        y = madonPää.y - ruudunKoko
     } else if (suunta === 'alas') {
-        x = madonPää.x;
-        y = madonPää.y + ruudunKoko;
+        x = madonPää.x
+        y = madonPää.y + ruudunKoko
     }
-    mato.unshift(game.add.sprite(x, y, 'mato'));
+    mato.unshift(game.add.sprite(x, y, 'mato'))
 }
 
 function liikutaHäntää() {
     if (mato.length > koko) {
-        mato.pop().destroy();
+        mato.pop().destroy()
     }
 }
 
 function lueSuunta() {
     if (näppäimet.right.isDown && suunta !== 'vasemmalle') {
-        suunta = 'oikealle';
+        suunta = 'oikealle'
     }
     if (näppäimet.left.isDown && suunta !== 'oikealle') {
-        suunta = 'vasemmalle';
+        suunta = 'vasemmalle'
     }
     if (näppäimet.up.isDown && suunta !== 'alas') {
-        suunta = 'ylös';
+        suunta = 'ylös'
     }
     if (näppäimet.down.isDown && suunta !== 'ylös') {
-        suunta = 'alas';
+        suunta = 'alas'
     }
 }
 // LOCK FROM BEGINNING

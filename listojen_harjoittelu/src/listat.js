@@ -1,4 +1,4 @@
-var lista = [];
+var lista = []
 
 // LOCK TO END
-console.log(lista);
+console.log(lista)

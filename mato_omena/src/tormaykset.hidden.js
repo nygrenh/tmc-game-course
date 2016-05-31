@@ -1,17 +1,17 @@
 function törmääItseensä() {
-    var madonPää = mato[0];
-    for (var i = 1; i < mato.length; i++) {
+    var madonPää = mato[0]
+    for (var i = 1 i < mato.length i++) {
         if (madonPää.x === mato[i].x && madonPää.y === mato[i].y) {
-            return true;
+            return true
         }
     }
-    return false;
+    return false
 }
 
 function törmääSeinään() {
-    var madonPää = mato[0];
+    var madonPää = mato[0]
     if (madonPää.x >= game.width || madonPää.x < 0 || madonPää.y >= game.height || madonPää.y < 0) {
-        return true;
+        return true
     }
-    return false;
+    return false
 }

@@ -1,1 +1,1 @@
-console.log('This test is pointless.');
+console.log('This test is pointless.')

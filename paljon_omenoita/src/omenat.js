@@ -1,6 +1,6 @@
 function luoOmenat() {
   // LOCK FROM BEGINNING
-  uusiOmena();
+  uusiOmena()
 
   // LOCK TO END
 }
