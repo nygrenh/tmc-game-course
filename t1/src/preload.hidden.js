@@ -1,5 +1,4 @@
 function preload() {
-
     game.load.baseURL = 'https://henriknygren.fi/'
     game.load.crossOrigin = 'anonymous'
 
@@ -7,5 +6,5 @@ function preload() {
 
     game.load.image('player', 'assets/green.png')
     game.load.image('platform', 'assets/gem.png')
-
+    game.load.image('bomb', 'assets/bomb.png')
 }
