@@ -24,14 +24,19 @@ context('Valetulostajan kanssa', function() {
         console.log = sinon.spy();
     });
 
-    it('Ensimmäiselle tulostuskomennolle annetaan vain yksi argumentti', function() {
+    it('Tulostuskomentoa on kustuttu', function() {
         eval(fileContents('tulosta.js'));
-        expect(console.log.getCall(0).args.length).to.equal(1, alaKirjoitaSamaanViesti)
+        expect(console.log.called).to.equal(true, 'Et ole kirjoittanut tulostuskomentoa.');
     });
 
     it('Tulostuskomentoa on kustuttu kahdesti', function() {
         eval(fileContents('tulosta.js'));
-        expect(console.log.calledTwice).to.equal(true, 'Et kutsunut tulostuskomentoa kahta kertaa. Yksi tulostuskomento tulostaa aina yhden rivin tekstiä.');
+        expect(console.log.calledTwice).to.equal(true, 'Tulostat yhden rivin. Miten saat tulostettua kaksi?');
+    });
+
+    it('Ensimmäiselle tulostuskomennolle annetaan vain yksi argumentti', function() {
+        eval(fileContents('tulosta.js'));
+        expect(console.log.getCall(0).args.length).to.equal(1, alaKirjoitaSamaanViesti)
     });
 
     it('Ensimmäisen rivin tulostus on oikea', function() {
