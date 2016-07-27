@@ -11,20 +11,20 @@ it('Osaa taikasananan', function() {
 });
 
 it('Osaa kirjoittaa sulut argumenteille', function() {
-   expect(fileContents('nimi.js')).to.match(/^\s*console\.log\s*\(.*\)/g, 'Tulostuskomennon jälkeen sinulla täytyy olla sulut, jonka sisällä kerrot mitä haluat tulostaa.');
+   expect(fileContents('nimi.js')).to.match(/^\s*console\.log\s*\(.*\)/m, 'Tulostuskomennon jälkeen sinulla täytyy olla sulut, jonka sisällä kerrot mitä haluat tulostaa.');
 });
 
 it('Argumentiksi on annettu jotakin', function() {
-   expect(fileContents('nimi.js')).to.not.match(/^\s*console\.log\s*\(\s*\)/g, 'Olet kirjoittanut tulostuskomennon oikein. Nyt laita se tulostamaan nimesi.');
+   expect(fileContents('nimi.js')).to.not.match(/^\s*console\.log\s*\(\s*\)/m, 'Olet kirjoittanut tulostuskomennon oikein. Nyt laita se tulostamaan nimesi.');
 });
 
 
 it('Argumentiksi annetaan merkkijono', function() {
-   expect(fileContents('nimi.js')).to.match(/^\s*console\.log\s*\(\s*["'].*["']\s*\)/g, 'Haluat tulostaa merkkijonon. Jotta tietokone ymmärtäisi nimesi olevan merkkijono, joudut laittamaan sen ympärille tietyt merkit. Varmista, että olet kirjoittanut kaiken täsmälleen oikein.');
+   expect(fileContents('nimi.js')).to.match(/^\s*console\.log\s*\(\s*["'].*["']\s*\)/m, 'Haluat tulostaa merkkijonon. Jotta tietokone ymmärtäisi nimesi olevan merkkijono, joudut laittamaan sen ympärille tietyt merkit. Varmista, että olet kirjoittanut kaiken täsmälleen oikein.');
 });
 
 it('Merkkijono ei ole tyhjä', function() {
-   expect(fileContents('nimi.js')).not.to.match(/^\s*console\.log\s*\(\s*["']\s*["']\s*\)/g, 'Kirjoita nimesi merkkijonoon.');
+   expect(fileContents('nimi.js')).not.to.match(/^\s*console\.log\s*\(\s*["']\s*["']\s*\)/m, 'Kirjoita nimesi merkkijonoon.');
 });
 
 it('Ei tule virheitä', function() {
