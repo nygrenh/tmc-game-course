@@ -1,50 +1,18 @@
-var consoleLogRegex = /^\s*console\.log/m;
-
-it('Tulostusta ei ole kirjoitettu kommentin sisään', function() {
-    if (!consoleLogRegex.test(fileContents('nimi.js'))) {
-        expect(fileContents('nimi.js')).to.not.match(/^\s*\/\/\s*cons/m, 'Kirjoitit tulostuskomennon kommentin sisään. Poista rivin alusta kommenttimerkintä "//".');
-    }
+it('Koodi kääntyy', function() {
+   expect(importingFile('ruutu.js')).not.to.throw(Error, 'Kirjoitit jotakin, mitä tietokone ei ymmärtänyt.') ;
 });
 
-it('Osaa taikasananan', function() {
-    expect(fileContents('nimi.js')).to.match(consoleLogRegex, 'Et ole kirjoittanut tulostuskomentoa. Katso yllä olevista esimerkistä mallia ja varmista, että olet kirjoittanut komennon täsmälleen oikein.');
-});
-
-it('Osaa kirjoittaa sulut argumenteille', function() {
-   expect(fileContents('nimi.js')).to.match(/^\s*console\.log\s*\(.*\)/m, 'Tulostuskomennon jälkeen sinulla täytyy olla sulut, jonka sisällä kerrot mitä haluat tulostaa.');
-});
-
-it('Argumentiksi on annettu jotakin', function() {
-   expect(fileContents('nimi.js')).to.not.match(/^\s*console\.log\s*\(\s*\)/m, 'Olet kirjoittanut tulostuskomennon oikein. Nyt laita se tulostamaan nimesi.');
-});
-
-
-it('Argumentiksi annetaan merkkijono', function() {
-   expect(fileContents('nimi.js')).to.match(/^\s*console\.log\s*\(\s*["'].*["']\s*\)/m, 'Haluat tulostaa merkkijonon. Jotta tietokone ymmärtäisi nimesi olevan merkkijono, joudut laittamaan sen ympärille tietyt merkit. Varmista, että olet kirjoittanut kaiken täsmälleen oikein.');
-});
-
-it('Merkkijono ei ole tyhjä', function() {
-   expect(fileContents('nimi.js')).not.to.match(/^\s*console\.log\s*\(\s*["']\s*["']\s*\)/m, 'Kirjoita nimesi merkkijonoon.');
-});
-
-it('Ei tule virheitä', function() {
-    expect(importingFile('nimi.js')).to.not.throw(Error, 'Koodissasi on kirjoitusvirhe. Varmista, että olet kirjoittanut kaiken täsmälleen oikein.')
-});
-
-it('Tulostuskomentoa on kutsuttu', function() {
+it('Tulostetaan viisi riviä', function() {
     var console = {};
     console.log = sinon.spy();
-
-    eval(fileContents('nimi.js'));
-
-    expect(console.log.called).to.equal(true, 'Tulostuskomentoa ei kutsuttu. Varmista että olet kirjoittanut kaiken oikein.');
+    eval(fileContents('ruutu.js'));
+    expect(console.log.callCount == 5).to.equal(true, 'Joudut tulostamaan viisi riviä.');
 });
 
-it('Tulostuskomentoa on kutsuttu merkkijonolla', function() {
-    var console = {};
-    console.log = sinon.spy();
-
-    eval(fileContents('nimi.js'));
-
-    expect(console.log.firstCall.args[0]).to.be.type('string', 'Tulostuskomentoa ei kutsuttu merkkijonolla. Varmista, että olet kirjoittanut kaiken oikein.');
+it('Tulostus on oikea', function() {
+   var console = {};
+   console.log = sinon.spy();
+   eval(fileContents('ruutu.js'));
+   var tulostus = console.log.getCalls().map(o => o.args[0]).join('\n');
+   expect(tulostus).to.match(/^  x[ \t]*\n xxx[ \t]*\nxxxxx[ \t]*\n xxx[ \t]*\n  x[ \t]*$/m, 'Tulostus ei ollut oikea. Tarkista että olet kirjoittanut kaiken täsmälleen oikein.')
 });
