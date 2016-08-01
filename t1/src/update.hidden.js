@@ -1,3 +1,5 @@
+var pommienNopeus = 800
+
 function update () {
     game.physics.arcade.collide(player, gems, (player, gem) => {
         gem.destroy()
