@@ -11,13 +11,13 @@ function update () {
 
     muutaSuuntaa()
 
-    platforms.setAll('body.velocity.y', palkinNopeus)
+    platforms.setAll('body.velocity.y', rubiininNopeus)
 }
 
 function muutaSuuntaa() {
     if (cursors.left.isDown) {
-        player.body.velocity.x = pallonNopeus
+        player.body.velocity.x = pelaajanNopeus
     } else if (cursors.right.isDown) {
-        player.body.velocity.x = -1 * pallonNopeus
+        player.body.velocity.x = -1 * pelaajanNopeus
     }
 }

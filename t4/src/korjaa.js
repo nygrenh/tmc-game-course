@@ -1,2 +1,2 @@
-var pallonNopeus = 250
-var palkinNopeus = -50
+var pelaajanNopeus = 250
+var rubiininNopeus = -50
