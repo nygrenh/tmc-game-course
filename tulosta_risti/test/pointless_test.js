@@ -1,50 +1,56 @@
-var consoleLogRegex = /^\s*console\.log/m;
+describe('Koodin muoto', function(){
+    it('Tulostuskomento kirjoitetaan', function() {
+        expect(fileContents('risti.js')).to.match(/^[\ \t]*console.log[\ \t]*\([\ \t]*[^\n]*[\ \t]*\)[\ \t]*$/m, 'Et voi tulostaa kuviota ilman tulostuskomentoa.')
+    });
 
-it('Tulostusta ei ole kirjoitettu kommentin sisään', function() {
-    if (!consoleLogRegex.test(fileContents('nimi.js'))) {
-        expect(fileContents('nimi.js')).to.not.match(/^\s*\/\/\s*cons/m, 'Kirjoitit tulostuskomennon kommentin sisään. Poista rivin alusta kommenttimerkintä "//".');
-    }
+    it('Tulostetaan merkkijono', function() {
+        expect(fileContents('risti.js')).not.to.match(/^[\ \t]*console.log[\ \t]*\([\ \t]*[^'"]+[\ \t]*\)[\ \t]*$/m, 'Muista käyttää tulostuksessa merkkijonon merkkejä.');
+    });
+
+    it('Koodi kääntyy', function() {
+        expect(importingFile('risti.js')).not.to.throw(Error, 'Kirjoitit jotakin, mitä tietokone ei ymmärtänyt');
+    });
 });
 
-it('Osaa taikasananan', function() {
-    expect(fileContents('nimi.js')).to.match(consoleLogRegex, 'Et ole kirjoittanut tulostuskomentoa. Katso yllä olevista esimerkistä mallia ja varmista, että olet kirjoittanut komennon täsmälleen oikein.');
-});
+describe('Tulostus', function() {
+    var console;
 
-it('Osaa kirjoittaa sulut argumenteille', function() {
-   expect(fileContents('nimi.js')).to.match(/^\s*console\.log\s*\(.*\)/m, 'Tulostuskomennon jälkeen sinulla täytyy olla sulut, jonka sisällä kerrot mitä haluat tulostaa.');
-});
+    beforeEach(function() {
+        console = {};
+        console.log = sinon.spy();
+    });
 
-it('Argumentiksi on annettu jotakin', function() {
-   expect(fileContents('nimi.js')).to.not.match(/^\s*console\.log\s*\(\s*\)/m, 'Olet kirjoittanut tulostuskomennon oikein. Nyt laita se tulostamaan nimesi.');
-});
+    it('Tulostuskomentoa on kutsuttu', function() {
+        eval(fileContents('risti.js'));
+        expect(console.log.called).to.equal(true, 'Et kutsunut tulostuskomentoa.');
+    });
 
+    it('Ensimmäisellä rivillä on oikea merkki', function() {
+        eval(fileContents('risti.js'));
+        expect(console.log.firstCall.args[0]).to.match(/^\ *#[\ \t]*$/m, 'Mistä merkistä ensimmäinen rivi muodostuu?');
+    });
+    it('Ensimmäisellä rivillä on tarpeeksi välilyöntejä', function() {
+        eval(fileContents('risti.js'));
+        expect(console.log.firstCall.args[0]).to.match(/^\ #[\ \t]*$/m, 'Varmista, että olet laittanut oikean määrän välilyöntejä ensimmäisen rivin alkuun.');
+    });
 
-it('Argumentiksi annetaan merkkijono', function() {
-   expect(fileContents('nimi.js')).to.match(/^\s*console\.log\s*\(\s*["'].*["']\s*\)/m, 'Haluat tulostaa merkkijonon. Jotta tietokone ymmärtäisi nimesi olevan merkkijono, joudut laittamaan sen ympärille tietyt merkit. Varmista, että olet kirjoittanut kaiken täsmälleen oikein.');
-});
+    it('Tulostettu kaksi riviä', function() {
+        eval(fileContents('risti.js'));
+        expect(console.log.callCount >= 2).to.equal(true, 'Kirjoita seuraavaksi toisen rivin tulostus.');
+    });
 
-it('Merkkijono ei ole tyhjä', function() {
-   expect(fileContents('nimi.js')).not.to.match(/^\s*console\.log\s*\(\s*["']\s*["']\s*\)/m, 'Kirjoita nimesi merkkijonoon.');
-});
+    it('Toinen rivi on oikea', function() {
+        eval(fileContents('risti.js'));
+       expect(console.log.getCall(1).args[0]).to.match(/^###[\ \t]*$/m, 'Varmista, että tulostat toisen rivin oikein.')
+    });
 
-it('Ei tule virheitä', function() {
-    expect(importingFile('nimi.js')).to.not.throw(Error, 'Koodissasi on kirjoitusvirhe. Varmista, että olet kirjoittanut kaiken täsmälleen oikein.')
-});
+    it('Tulostettu kolme', function() {
+        eval(fileContents('risti.js'));
+        expect(console.log.callCount == 3).to.equal(true, 'Sinun täytyy tulostaa yhteensä kolme riviä.');
+    });
 
-it('Tulostuskomentoa on kutsuttu', function() {
-    var console = {};
-    console.log = sinon.spy();
-
-    eval(fileContents('nimi.js'));
-
-    expect(console.log.called).to.equal(true, 'Tulostuskomentoa ei kutsuttu. Varmista että olet kirjoittanut kaiken oikein.');
-});
-
-it('Tulostuskomentoa on kutsuttu merkkijonolla', function() {
-    var console = {};
-    console.log = sinon.spy();
-
-    eval(fileContents('nimi.js'));
-
-    expect(console.log.firstCall.args[0]).to.be.type('string', 'Tulostuskomentoa ei kutsuttu merkkijonolla. Varmista, että olet kirjoittanut kaiken oikein.');
+    it('Kolmas rivi on oikea', function() {
+        eval(fileContents('risti.js'));
+       expect(console.log.getCall(2).args[0]).to.match(/^\ #[\ \t]*$/m, 'Varmista, että tulostat kolmannen rivin oikein.')
+    });
 });
