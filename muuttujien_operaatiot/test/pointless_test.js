@@ -1,5 +1,24 @@
+function kayttajanKoodi() {
+    var lineArray = fileContents('nimi.js').split(/\n/);
+    var solutionStart = lineArray.indexOf('// LOCK FROM BEGINNING');
+
+    return lineArray.slice(solutionStart).join('\n');
+}
+
 it('Koodi kääntyy', function() {
     expect(importingFile('nimi.js')).not.to.throw(Error, 'Kirjoitit jotakin, mitä tietokone ei ymmärtänyt.');
+});
+
+it('a:n arvoa ei aseteta uudestaan', function() {
+    expect(kayttajanKoodi()).not.to.match(/^[^\n]*\ba\b[ \t]* =/m, 'Älä aseta muuttujan a arvoa uudeksi. Sinun on tarkoitus käyttää a:ta vain laskutoimituksessa.')
+});
+
+it('b:n arvoa ei aseteta uudestaan', function() {
+    expect(kayttajanKoodi()).not.to.match(/^[^\n]*\bb\b[ \t]* =/m, 'Älä aseta muuttujan b arvoa uudeksi. Sinun on tarkoitus käyttää a:ta vain laskutoimituksessa.')
+});
+
+it('Uusia muuttujia ei luoda', function() {
+    expect(kayttajanKoodi()).not.to.match(/^[^\n"']*\bvar\b[ \t]*/m, 'Älä luo uusia muuttujia. Käytä vain muuttujia, jotka ovat valmiina tehtäväpohjassa.')
 });
 
 it('Tehtävän vastaus tulostetaan', function() {
@@ -35,7 +54,7 @@ it('Laskutoimituksessa ei käytetä numeroita', function() {
 });
 
 it('Laskutoimituksia tehdään van sallituilla asioilla', function() {
-    expect(fileContents('nimi.js')).to.match(/^[\ \t]*console.log[\ \t]*\([\ \t]*[\ ab\+\-/\^\*]+[\ \t]*\)[\ \t]*$/m, 'Saat käyttää vain muuttujia a ja b ja tehdä niiden välillä laskutoimituksia. Käytit laskuissasi väärää merkkiä.');
+    expect(fileContents('nimi.js')).to.match(/^[\ \t]*console.log[\ \t]*\([\ \t]*[\ ab\+\-\/\^\*\(\)]+[\ \t]*\)[\ \t]*$/m, 'Saat käyttää vain muuttujia a ja b ja tehdä niiden välillä laskutoimituksia. Käytit laskuissasi väärää merkkiä.');
 });
 
 it('Laskutoimituksen tulos on oikea', function() {
@@ -43,5 +62,5 @@ it('Laskutoimituksen tulos on oikea', function() {
     console.log = sinon.spy();
 
     eval(fileContents('nimi.js'));
-    expect(console.log.getCall(0).args[0]).to.equal(30, 'Laskutoimituksen tulos ei ollut 30.')
+    expect(console.log.getCall(0).args[0]).to.equal(37, 'Laskutoimituksen tulos ei ollut 37.')
 });
