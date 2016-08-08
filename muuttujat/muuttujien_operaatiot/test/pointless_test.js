@@ -42,7 +42,7 @@ it('Vastausta ei tulosteta suoraan', function() {
 });
 
 it('Ei käytetä merkkijonoja', function() {
-    expect(fileContents('nimi.js')).to.match(/^[\ \t]*console.log[\ \t]*\([\ \t]*[^\n"']*[\ \t]*\)[\ \t]*$/m, 'Tässä tehtässä lasketaan numeroilla. Et tarvitse merkkijonoja mihinkään.');
+    expect(fileContents('nimi.js')).to.match(/^[\ \t]*console.log[\ \t]*\([\ \t]*[^\n"']*[\ \t]*\)[\ \t]*$/m, 'Tässä tehtävässä lasketaan numeroilla. Et tarvitse merkkijonoja mihinkään.');
 });
 
 it('Ei käytetä väärää jakomerkkiä', function() {
