@@ -8,7 +8,7 @@ describe('Stattiset testit', function() {
     });
 
     it('Koodi kääntyy', function() {
-        expect(importingFile('listat.js')).not.to.throw(Error, 'Kirjoitit jotakin, mitä tietokone ei ymmärtänyt.');
+        expect(importingFile('funktiot.js')).not.to.throw(Error, 'Kirjoitit jotakin, mitä tietokone ei ymmärtänyt.');
     });
 });
 
