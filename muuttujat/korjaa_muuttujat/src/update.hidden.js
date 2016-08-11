@@ -12,6 +12,15 @@ function update () {
     muutaSuuntaa()
 
     platforms.setAll('body.velocity.y', rubiininNopeus)
+    if (timer.running) {
+      timeText.text = "Aikaa jäljellä: " + remainingTime()
+    }
+}
+
+function remainingTime() {
+    var s = Math.round((timerEvent.delay - timer.ms) / 1000)
+    var seconds = "0" + (s)
+    return seconds.substr(-2)
 }
 
 function muutaSuuntaa() {

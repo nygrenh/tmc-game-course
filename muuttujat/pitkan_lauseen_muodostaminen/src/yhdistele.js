@@ -1,7 +1,7 @@
-var a = "Sanojen yhdisteleminen "
-var b = "on helpompaa "
-var c = "kuin kuvittelin."
+var a = "on helpompaa "
+var b = "kuin kuvittelin."
+var c = "Sanojen yhdisteleminen "
 // LOCK FROM BEGINNING
-var yhdistetty = 
+var yhdistetty =
 // LOCK TO END
 console.log(yhdistetty)
