@@ -11,7 +11,7 @@ it('Ratkaisussa ei käytetä varia', function() {
 });
 
 it('Ratkaisussa on oikean muotoinen', function() {
-    expect(kayttajanKoodi()).to.match(/^[ \t]*a[ \t]*=[ \t]*a[ \t]*\*[ \t]*\d*[ \t]*$/m, 'Haluat asettaa a:n arvon olevan a:n nykyinen arvo kerrottuna jollakin luvulla.');
+    expect(kayttajanKoodi()).to.match(/^[ \t]*x[ \t]*=[ \t]*x[ \t]*\+[ \t]*\d*[ \t]*$/m, 'Haluat asettaa x:n arvon olevan x:n nykyinen arvo, johon lisätään jokin luku.');
 });
 
 it('Koodi kääntyy', function() {
@@ -23,5 +23,5 @@ it('Tulos on oikea', function() {
     console.log = sinon.spy();
     eval(fileContents('kasvatus.js'));
     var msg = console.log.lastCall.args[0];
-    expect(msg).to.equal(1143188, 'Muuttujan a arvo ei ollut #{exp} vaan se oli: #{act}.');
+    expect(msg).to.equal(225, 'Muuttujan a arvo ei ollut #{exp} vaan se oli: #{act}.');
 });

@@ -1,4 +1,4 @@
-// Korvaa kirjoita tämän kommentin alle muuttujan etunimi alustus
+// Kirjoita tämän kommentin alle muuttujan etunimi luonti
 // LOCK FROM BEGINNING
 
 

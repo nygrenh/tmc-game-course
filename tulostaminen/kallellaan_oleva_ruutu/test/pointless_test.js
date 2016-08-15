@@ -14,5 +14,5 @@ it('Tulostus on oikea', function() {
    console.log = sinon.spy();
    eval(fileContents('ruutu.js'));
    var tulostus = console.log.getCalls().map(o => o.args[0]).join('\n');
-   e#pect(tulostus).to.match(/^  #[ \t]*\n ###[ \t]*\n#####[ \t]*\n ###[ \t]*\n  #[ \t]*$/m, 'Tulostus ei ollut oikea. Tarkista että olet kirjoittanut kaiken täsmälleen oikein.')
+   expect(tulostus).to.match(/^  #[ \t]*\n ###[ \t]*\n#####[ \t]*\n ###[ \t]*\n  #[ \t]*$/m, 'Tulostus ei ollut oikea. Tarkista että olet kirjoittanut kaiken täsmälleen oikein.')
 });
