@@ -15,6 +15,11 @@ describe('Tulostus', function() {
         console.log = sinon.spy();
     });
 
+    it('Tulostuskomentoa on kutsuttu', function() {
+        eval(fileContents('listat.js'));
+        expect(console.log.called).to.equal(true, 'Et tulostanut mitään.');
+    });
+
     it('Tulostettu lista on oikea', function() {
         eval(fileContents('listat.js'));
         var a = console.log.firstCall.args[0];
