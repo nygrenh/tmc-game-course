@@ -7,7 +7,7 @@ function solution() {
 
 describe('Stattiset testit', function() {
     it('Taikasana osataan', function() {
-        expect(solution()).to.match(/^[ \t]*function[^\n]*$/m, 'Aloita funktion määrittäminen kirjoittamalla tietty sanan, joka aloittaa funktion määrittelyn.');
+        expect(solution()).to.match(/^[ \t]*function[^\n]*$/m, 'Aloita funktion määrittäminen kirjoittamalla tietyn sanan, joka aloittaa funktion määrittelyn.');
     });
 
     it('Taikasanan jälkeen ei kirjoiteta sulkeita', function() {
