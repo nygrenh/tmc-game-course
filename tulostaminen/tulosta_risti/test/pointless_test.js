@@ -1,6 +1,6 @@
 describe('Koodin muoto', function(){
     it('Tulostuskomento kirjoitetaan', function() {
-        expect(fileContents('risti.js')).to.match(/^[\ \t]*console.log[\ \t]*\([\ \t]*[^\n]*[\ \t]*\)[\ \t]*$/m, 'Et voi tulostaa kuviota ilman tulostuskomentoa.')
+        expect(fileContents('risti.js')).to.match(/^[\ \t]*console.log[\ \t]*\([\ \t]*[^\n]*[\ \t]*\)[\ \t;]*$/m, 'Et voi tulostaa kuviota ilman tulostuskomentoa.')
     });
 
     it('Tulostetaan merkkijono', function() {
