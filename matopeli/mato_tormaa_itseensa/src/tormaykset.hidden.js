@@ -14,7 +14,7 @@ function törmääSeinään() {
 }
 
 function törmääOmenaan() {
-    for (var i = 0 i < mato.length i++){
+    for (var i = 0; i < mato.length; i++) {
         if (mato[i].x === omena.x && mato[i].y === omena.y) {
             return true
         }
