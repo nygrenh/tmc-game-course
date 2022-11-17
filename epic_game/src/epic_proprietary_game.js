@@ -31,8 +31,8 @@ function preload() {
 
     game.stage.backgroundColor = '#000'
 
-    game.load.image('player', 'assets/player.png')
-    game.load.image('platform', 'assets/platform.png')
+    game.load.image('player', '/matopeli/player.png')
+    game.load.image('platform', '/matopeli/platform.png')
 
 }
 
