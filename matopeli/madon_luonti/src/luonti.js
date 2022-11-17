@@ -3,6 +3,6 @@ var suunta = 'alas'
 
 function luoMato() {
     // END LOCK
-    luoMadonOsa(35, 25)
+    luoMadonOsa(5, 5)
     // LOCK TO END
 }

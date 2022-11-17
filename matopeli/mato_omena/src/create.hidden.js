@@ -30,7 +30,7 @@ function create() {
 }
 
 function luoMato() {
-    luoMadonOsa(35, 25)
+    luoMadonOsa(5, 5)
 }
 
 function luoMadonOsa(x, y) {
