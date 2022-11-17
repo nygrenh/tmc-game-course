@@ -26,7 +26,7 @@ function create() {
 }
 
 function preload() {
-    game.load.baseURL = 'https://download.mooc.fi/'
+    game.load.baseURL = 'https://download.mooc.fi'
     game.load.crossOrigin = 'anonymous'
 
     game.stage.backgroundColor = '#000'
